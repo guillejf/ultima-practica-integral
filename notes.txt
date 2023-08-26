@@ -1,0 +1,3 @@
+adminCoder@coder.com
+adminCod3r123
+usuario para poder acceder a ver los usuarios desde el Front, y ver el administrador de productos.

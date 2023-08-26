@@ -1,0 +1,129 @@
+<main>
+	{{#if firstName}}
+		<div class="flex-row text-end mt-3 ms-3" style="width: 99%;">
+			<div class="d-flex justify-content-end align-items-center">
+				<h5>Hola, {{firstName}}. Tu rol es <span id="role">{{role}}</span></h5>
+				<a href="/api/sessions/logout" class="btn btn-danger btn-sm btnLogin ms-2 me-5 mb-1">
+					<i class="bi bi-box-arrow-left me-2"></i>Logout
+				</a>
+			</div>
+		</div>
+	{{/if}}
+	<div class="title">
+		<a href="/home"><img src="/images/logo.png" class="logo" alt="" /></a>
+		<h1 class="text-center">{{{title}}}</h1>
+		<hr />
+	</div>
+	<div class="floatCartButton">
+		<button class="fixed-bottom-right btn btn-primary btn-lg me-2">
+			<a id="cartLink" href="/cart/{{cartId}}" class="text-white" style="text-decoration: none;">
+				<i class="bi bi-cart text-white me-2" style="text-decoration: none;"></i>
+				<span>{{cartQuantity}}</span>
+			</a>
+		</button>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col g-0 d-flex flex-wrap justify-content-center gap-5">
+				{{#each plainProducts}}
+					<div class="card" style="width: 15rem; border: 1px solid black">
+						<img src="/{{this.thumbnail}}" class="card-img" alt="{{this.title}}" />
+						<div class="card-body text-center">
+							<div class="card-title">
+								<h4 class="m-0">{{this.title}}</h4>
+							</div>
+							<div class="card-title">
+								<h6 class="m-0">{{this.category}}</h6>
+							</div>
+							<div class="card-description">
+								<p class="m-0 py-2">{{this.description}}</p>
+							</div>
+							<div class="card-price">
+								<p class="m-0">$ {{this.price}}.-</p>
+							</div>
+							<div class="card-btn d-flex justify-content-end align-items-end w-100">
+								<button
+									class="btn btn-dark btn-sm me-2 btnCart"
+									data-product-id="{{this._id}}"
+									data-cart-id="{{cartId}}"
+								>Agregar al Carrito</button>
+							</div>
+						</div>
+					</div>
+				{{/each}}
+			</div>
+			<div class="d-flex justify-content-center">
+				<p class="fs-3">
+					{{#if hasPrevPage}}
+						<button style="border: none;" class="btn btn-transparent p-0 mb-1 fs-3">
+							<a href="/products/?pagina=1"><i class="bi bi-arrow-bar-left"></i></a>
+						</button>
+						<button style="border: none" class="btn btn-transparent p-0 mb-1 fs-3">
+							<a href="/products/?pagina={{prevPage}}"><i class="bi bi-arrow-left-circle-fill"></i></a>
+						</button>
+					{{/if}}
+					Pagina:
+					<span class="fw-bold">{{page}}</span>
+					de
+					<span class="fw-bold">{{totalPages}}</span>
+
+					{{#if hasNextPage}}
+						<button style="border: none" class="btn btn-transparent p-0 mb-1 fs-3"><a
+								href="/products/?pagina={{nextPage}}"
+							><i class="bi bi-arrow-right-circle-fill"></i></a></button>
+						<button style="border: none" class="btn btn-transparent p-0 mb-1 fs-3"><a
+								href="/products/?pagina={{totalPages}}"
+							><i class="bi bi-arrow-bar-right"></i></a></button>
+					{{/if}}
+				</p>
+			</div>
+		</div>
+	</div>
+</main>
+<footer class="border-0 border-top border-dark text-center text-dark">
+	<div class="container p-4 pb-0">
+		<section>
+			<a
+				target="_blank"
+				class="btn text-white btn-floating m-1"
+				style="background-color: #3b5998;"
+				href="https://www.facebook.com/franco.galluccio"
+				role="button"
+			><i class="bi bi-facebook"></i></a>
+			<a
+				target="_blank"
+				class="btn text-white btn-floating m-1"
+				style="background-color: #55acee;"
+				href="https://twitter.com/coderhouse"
+				role="button"
+			><i class="bi bi-twitter"></i></a>
+			<a
+				target="_blank"
+				class="btn text-white btn-floating m-1"
+				style="background-color: #ac2bac;"
+				href="https://www.instagram.com/fraaaangl/"
+				role="button"
+			><i class="bi bi-instagram"></i></a>
+			<a
+				target="_blank"
+				class="btn text-white btn-floating m-1"
+				style="background-color: #0082ca;"
+				href="https://www.linkedin.com/in/franco-ivan-galluccio-553b1224a/"
+				role="button"
+			><i class="bi bi-linkedin"></i></a>
+			<a
+				target="_blank"
+				class="btn text-white btn-floating m-1"
+				style="background-color: #333333;"
+				href="https://github.com/FrannGL"
+				role="button"
+			><i class="bi bi-github"></i></a>
+		</section>
+	</div>
+	<div class="text-center p-3 footerInfo">
+		<h5>2023 Backend Project in CODERHOUSE using NODE.JS, EXPRESS.JS and MongoDB</h5>
+		<h6>by Franco Galluccio</h6>
+	</div>
+</footer>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

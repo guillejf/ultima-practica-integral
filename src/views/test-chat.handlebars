@@ -1,0 +1,32 @@
+<div class="container-fluid">
+	<div class="col">
+		<div class="row">
+			<h1 class="text-center">
+				Live Chat using Websockets!
+			</h1>
+			<div class="col">
+				<div class="row">
+					<h4 class="text-center mt-3 fs-4">Mensajes:</h4>
+					<div id="div-msgs" class="d-flex flex-column align-items-center justify-content-center">
+					</div>
+				</div>
+				<div class="row">
+					<div class="d-flex justify-content-center align-items-center">
+						<div class="form-floating mb-3" style="width: 100%;">
+							<input
+								type="text"
+								class="form-control border-0 border-bottom border-dark"
+								id="input-msg"
+								placeholder="Nombre"
+							/>
+							<label for="input-title"><i class="bi bi-chat-dots me-2"></i>Insert Your Message</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/test-chat.js"></script>

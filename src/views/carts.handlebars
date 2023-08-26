@@ -1,0 +1,134 @@
+<main>
+  {{#if firstName}}
+    <div class="flex-row text-end mt-3 ms-3" style="width: 99%;">
+      <div class="d-flex justify-content-end align-items-center">
+        <h5>Hola,
+          {{firstName}}. Tu rol es
+          <span id="role">{{role}}</span><span
+            id="email"
+            class="userEmail"
+          >{{email}}</span></h5>
+        <a
+          href="/api/sessions/logout"
+          class="btn btn-danger btn-sm btnLogin ms-2 me-5 mb-1"
+        >
+          <i class="bi bi-box-arrow-left me-2"></i>Logout
+        </a>
+      </div>
+    </div>
+  {{/if}}
+  <div class="title h-25">
+    <a href="/home"><img src="/images/logo.png" class="logo" alt="logo" /></a>
+    <h1 class="text-center">{{{title}}}</h1>
+    <hr />
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col g-0">
+        <div class="cartContainer">
+          <p class="cartId">{{cartId}}</p>
+          {{#if plainCart.length}}
+            {{#each plainCart}}
+              <div class="cartItem">
+                <img
+                  class="cartImg"
+                  src=".{{this.product.thumbnail}}"
+                  alt="{{this.product.title}}"
+                />
+                <div class="cartHead">
+                  <p class="titles titulo">Titulo</p>
+                  <p class="content">{{this.product.title}}</p>
+                </div>
+                <div class="cartHead description">
+                  <p class="titles">Descripcion</p>
+                  <p class="content">{{this.product.description}}</p>
+                </div>
+                <div class="cartHead">
+                  <p class="titles">Cantidad</p>
+                  <div class="cartQuant">
+                    <p id="cantidad" class="content quant">{{this.quantity}}</p>
+                    <div class="cartQuantController">
+                      <button class="butonController">+</button>
+                      <button class="butonController">-</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="cartHead">
+                  <p class="titles">Precio</p>
+                  <p id="precio" class="content">$ {{this.product.price}}</p>
+                </div>
+                <div class="cartHead">
+                  <p class="titles">Subtotal</p>
+                  <p id="subtotal" class="content"></p>
+                </div>
+                <button
+                  class="butonDelete bi bi-trash"
+                  data-product-id="{{this.product._id}}"
+                  data-cart-id="{{cartId}}"
+                ></button>
+              </div>
+            {{/each}}
+          {{else}}
+            <div class="alert alert-danger" role="alert">
+              <i class="bi bi-exclamation-triangle fs-4"></i>
+              TU CARRITO ESTÁ VACÍO. AGREGA PRODUCTOS PARA CONTINUAR.
+            </div>
+            <button class="btn btn-dark btn-lg mt-2 me-3">
+              <a
+                class="text-white"
+                href="/products"
+                style="text-decoration: none;"
+              >
+                Ver Productos
+              </a>
+            </button>
+          {{/if}}
+          {{#if plainCart.length}}
+            <div class="carrito-acciones" id="carrito-acciones">
+              <div class="carrito-acciones-izquierda">
+                <button class="btn btn-dark btn-lg mt-2 me-3">
+                  <a
+                    class="text-white"
+                    href="/products"
+                    style="text-decoration: none;"
+                  >
+                    <i class="bi bi-cart text-white me-2"></i>
+                    Seguir Comprando
+                  </a>
+                </button>
+                <button
+                  class="btn btn-outline-dark btn-lg mt-2"
+                  id="carrito-acciones-vaciar"
+                >
+                  <i class="bi bi-trash"></i>
+                  Vaciar Carrito
+                </button>
+              </div>
+              <div class="carrito-acciones-derecha">
+                <div
+                  class="btn-group"
+                  role="group"
+                  aria-label="Large button group"
+                >
+                  <button type="button" class="btn btn-outline-dark"><p
+                      class="totalCart mt-2"
+                    >TOTAL: $
+                      <span></span>
+                      .-</p></button>
+                  <a
+                    href="#"
+                    class="btn btn-success btn-lg fw-bold text-center buttonShop"
+                    id="carrito-acciones-comprar"
+                  ><i class="bi bi-check-circle fs-4 me-1"></i>
+                    COMPRAR</a>
+                </div>
+              </div>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

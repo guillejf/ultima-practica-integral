@@ -1,0 +1,119 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col g-0">
+			<div class="bg-image" style="filter: blur(5px);"></div>
+
+			<div class="contenedorTituloPrincipal">
+				<a href="/"><img src="/images/logo.png" class="logo" alt="logo" /></a>
+				<div
+					class="d-flex justify-content-center align-items-center flex-column bg-dark"
+					style="border-radius: 20px 20px 20px 20px"
+				>
+					<div class="tab-content">
+						<div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+							<form action="/api/sessions/register" method="post" style="width: 500px; padding: 10px;">
+								<div class="text-center text-white mb-3">
+									<p>Register with:</p>
+									<button type="button" class="btn btn-link btn-floating mx-1">
+										<i class="bi bi-facebook"></i>
+									</button>
+
+									<button type="button" class="btn btn-link btn-floating mx-1">
+										<i class="bi bi-google"></i>
+									</button>
+
+									<button type="button" class="btn btn-link btn-floating mx-1">
+										<i class="bi bi-twitter"></i>
+									</button>
+
+									<button type="button" class="btn btn-link btn-floating mx-1">
+										<a href="/api/sessions/github"><i class="bi bi-github"></i></a>
+									</button>
+								</div>
+
+								<p class="text-center text-white">or:</p>
+
+								<div class="mb-4">
+									<div class="form-floating mb-3">
+										<input
+											type="text"
+											class="form-control border-0 border-bottom border-dark"
+											id="inputFirstNameRegister"
+											name="firstName"
+											placeholder="Firstname"
+										/>
+										<label for="input-firstNameLogin"><i class="bi bi-person-vcard me-1"></i>Firstname</label>
+									</div>
+
+									<div class="form-floating mb-3">
+										<input
+											type="text"
+											class="form-control border-0 border-bottom border-dark"
+											id="inputLastnameRegister"
+											name="lastName"
+											placeholder="Lastname"
+										/>
+										<label for="input-lastnamedLogin"><i class="bi bi-person-vcard-fill me-1"></i>Lastname</label>
+									</div>
+
+									<div class="form-floating mb-3">
+										<input
+											type="number"
+											class="form-control border-0 border-bottom border-dark"
+											id="inputAgeRegister"
+											name="age"
+											placeholder="Age"
+										/>
+										<label for="input-ageLogin"><i class="bi bi-chat-heart-fill me-1"></i>Age</label>
+									</div>
+
+									<div class="form-floating mb-3">
+										<input
+											type="email"
+											class="form-control border-0 border-bottom border-dark"
+											id="inputEmailRegister"
+											name="email"
+											placeholder="Email"
+										/>
+										<label for="input-emailLogin"><i class="bi bi-envelope-at me-1"></i>Email</label>
+									</div>
+
+									<div class="form-floating mb-3">
+										<input
+											type="password"
+											class="form-control border-0 border-bottom border-dark"
+											id="inputPasswordRegister"
+											name="password"
+											placeholder="Password"
+										/>
+										<label for="input-passwordLogin"><i class="bi bi-eye-slash me-1"></i>Password</label>
+									</div>
+
+									<div class="w-100 mt-4 d-flex justify-content-center align-items-center flex-column text-white">
+										<button type="submit" class="btn btn-primary btn-block mb-4 w-100">
+											Register
+										</button>
+										<div class="w-100 d-flex justify-content-between align-items-center flex-column gap-3">
+											<div class="form-check w-100 d-flex justify-content-center align-items-center">
+												<input class="form-check-input me-2" type="checkbox" value="" id="loginCheck" checked />
+												<label class="form-check-label" for="loginCheck">Remember me</label>
+											</div>
+											<div class="row w-100 text-center">
+												<a href="#!">Forgot password?</a>
+											</div>
+											<div class="row">
+												<p>Are you already a member?
+													<a href="/api/sessions/login">Login</a></p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

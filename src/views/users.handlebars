@@ -1,0 +1,62 @@
+<main>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col g-0">
+				<div class="bg-image" style="filter: blur(5px);"></div>
+				<div class="contenedorTituloPrincipal">
+					{{#if firstName}}
+						<div
+							class="flex-row text-white text-end mt-3 ms-3"
+							style="width: 100%; position: absolute; top: 0; right: 0"
+						>
+							<div class="d-flex justify-content-end align-items-center">
+								<h5>Hola, {{firstName}}. Tu rol es {{role}}</h5>
+								<a
+									href="/api/sessions/logout"
+									class="btn btn-danger btn-sm btnLogin ms-2 me-3 mb-1"
+								>
+									<i class="bi bi-box-arrow-left me-2"></i>Logout
+								</a>
+							</div>
+						</div>
+					{{/if}}
+					<a href="/home"><img src="/images/logo.png" class="logo" alt="" /></a>
+					<h2 class="tituloPrincipal">burguers a la parrilla</h2>
+					<table
+						class="table table-dark table-striped-columns mt-3 w-50 text-center"
+					>
+						<thead>
+							<tr class="table-secondary">
+								<th scope="col">ID</th>
+								<th scope="col">FIRSTNAME</th>
+								<th scope="col">LASTNAME</th>
+								<th scope="col">AGE</th>
+								<th scope="col">EMAIL</th>
+								<th scope="col">PASSWORD</th>
+								<th scope="col">ROL</th>
+							</tr>
+						</thead>
+						{{#each dataParse}}
+							<tbody>
+								<tr>
+									<td>{{this.id}}</td>
+									<td>{{this.firstName}}</td>
+									<td>{{this.lastName}}</td>
+									<td>{{this.age}}</td>
+									<td>{{this.email}}</td>
+									<td>{{this.password}}</td>
+									<td>{{this.role}}</td>
+								</tr>
+							</tbody>
+						{{/each}}
+					</table>
+
+					<a
+						href="/home"
+						class="btn btn-outline-light btn-sm fs-6 text-decoration-none"
+					><i class="bi bi-box-arrow-in-left me-2"></i>VOLVER AL INICIO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

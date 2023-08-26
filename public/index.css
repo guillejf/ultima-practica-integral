@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #d7d7d7;
+}
+
+.title {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+}
+
+.card {
+	border-radius: 10px 100px / 120px;
+	box-shadow: 10px 10px 30px #000;
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+
+.card-body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.card-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	width: 200px;
+}
+
+.card-title h4 {
+	font-size: 1.4rem;
+}
+
+.card-description {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 75px;
+}
+
+.card-description p {
+	font-size: 0.8rem;
+}
+
+.card-price {
+	margin: 0;
+	padding: 0;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	font-weight: bold;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	margin-bottom: 10px;
+}
+
+.card-price p {
+	margin: 0;
+	padding: 0;
+}
+
+.card-item-detail {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+
+.card-item-detail p {
+	font-size: 0.8rem;
+	margin: 0;
+	padding: 0;
+}
+
+.card-id {
+	font-size: 0.8rem;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 10px;
+}
+
+.btnContainer {
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	align-items: end;
+}
+
+.btnContainer a {
+	width: auto;
+	font-size: 0.8rem;
+}
+
+.btnAdd {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btnAdd button {
+	width: 100%;
+}
+
+.cartId {
+	display: none;
+}
+
+.cartContainer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	margin-bottom: 100px;
+}
+
+.cartItem {
+	width: 1200px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 30px;
+	box-shadow: 7px 5px 19px 1px rgba(0, 0, 0, 0.46);
+	-webkit-box-shadow: 7px 5px 19px 1px rgba(0, 0, 0, 0.46);
+	-moz-box-shadow: 7px 5px 19px 1px rgba(0, 0, 0, 0.46);
+}
+
+.titles {
+	font-weight: bold;
+	text-align: center;
+}
+
+.content {
+	text-align: center;
+	font-size: 20px;
+}
+
+.titulo {
+	width: 120px;
+}
+
+.description {
+	font-weight: normal;
+	width: 300px;
+}
+
+.quant {
+	width: 40px;
+}
+
+.cartQuant {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cartQuantController {
+	width: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.butonController {
+	width: 30px;
+	height: 30px;
+	font-size: 15px;
+	border: 1px solid black;
+}
+
+.butonDelete {
+	background-color: transparent;
+	border: none;
+	color: red;
+	font-size: 30px;
+}
+
+.cartImg {
+	width: 150px;
+}
+
+.carrito-acciones {
+	width: 1200px;
+	display: flex;
+	margin-top: 30px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.userEmail {
+	display: none;
+}
+
+/* .carrito-acciones-vaciar {
+  border-radius: 20%;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.6rem;
+  text-transform: uppercase;
+  cursor: pointer;
+} */
+
+.carrito-acciones-derecha {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.buttonShop {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.carrito-acciones-total {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 12px;
+	border: 1px solid black;
+	border-top-left-radius: 1rem;
+	border-bottom-left-radius: 1rem;
+}
+
+.totalCart {
+	font-size: 20px;
+	text-align: center;
+}
+
+.totalCart span {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.fixed-bottom-right {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	transform: scale(1.5);
+	z-index: 100;
+}
+
+.bg-image {
+	background-image: url("/images/burger-wallpaper3.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100vh;
+}
+
+.btnCredentials {
+	width: 100%;
+	height: auto;
+}
+
+.contenedorTituloPrincipal {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.45);
+}
+
+.user {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 15px;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.wrapper .menuContainer {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: 30px;
+	list-style: none;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 300;
+}
+
+.menuContainer li {
+	transition: all 0.3s ease;
+}
+
+.menuContainer li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.menuContainer li:hover {
+	cursor: pointer;
+	color: #c4c3c3;
+	transform: scale(1.2);
+}
+
+.menuItem {
+	font-size: 20px;
+}
+
+.logo {
+	width: 200px;
+	margin-bottom: 20px;
+}
+
+.tituloPrincipal {
+	color: #fff;
+	text-transform: uppercase;
+	font-family: "Oswald", sans-serif;
+	font-weight: bold;
+	letter-spacing: 3;
+	font-size: 2.5rem;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	padding: 0.5rem;
+	text-align: center;
+}
+
+.modal-footer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+ul {
+	margin: 0;
+}
+
+.modal-footer button {
+	width: 48%;
+}
+
+.footerInfo {
+	font-family: "Oswald", sans-serif;
+}
+
+.footerInfo h5 {
+	font-size: 1.5rem;
+}
+
+/* TICKETS */
+
+ul li {
+	margin-bottom: 1.4rem;
+}
+
+.pricing-divider {
+	border-radius: 20px;
+	background: #000000;
+	padding: 1em 0 4em;
+	position: relative;
+}
+
+.pricing-divider-img {
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	height: 80px;
+}
+
+.pricing-divider .code {
+	font-size: 15px;
+}
+
+.princing-item {
+	transition: all 150ms ease-out;
+}
+.princing-item:hover {
+	transform: scale(1.05);
+}
+.princing-item:hover .deco-layer--1 {
+	-webkit-transform: translate3d(15px, 0, 0);
+	transform: translate3d(15px, 0, 0);
+}
+.princing-item:hover .deco-layer--2 {
+	-webkit-transform: translate3d(-15px, 0, 0);
+	transform: translate3d(-15px, 0, 0);
+}
+
+.product-list {
+	list-style: none;
+}
+
+.wrapper {
+	width: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+.innerWrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.list {
+	width: 100%;
+	display: flex;
+	padding: 0 50px;
+	gap: 20px;
+}
+
+.ticketItems {
+	width: 250px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 51px;
+	background: linear-gradient(145deg, #f0f0f0, #cacaca);
+	box-shadow: 5px 5px 10px #b8b8b8, -5px -5px 10px #ffffff;
+}
+
+.ticketTitles {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.totalPurchase {
+	font-weight: bold;
+}
+
+.totalPurchase span {
+	font-weight: normal;
+	font-size: 20px;
+}

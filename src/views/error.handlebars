@@ -1,0 +1,89 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col g-0">
+			<div class="bg-image" style="filter: blur(5px);"></div>
+			<div class="contenedorTituloPrincipal">
+				<a href="/"><img src="/images/logo.png" alt="logo" style="width: 300px;" /></a>
+				<h2 class="tituloPrincipal mt-2">burguers a la parrilla</h2>
+
+				{{#if errorMsg}}
+					<div class="d-flex justify-content-center align-items-center mt-5 p-3">
+						<img src="/images/error.png" class="me-3" alt="error" width="50px" />
+						<h4 class="text-white mt-1" style="text-transform: uppercase;">{{errorMsg}}</h4>
+					</div>
+
+					<a href="/" class="btn btn-outline-light btn-sm fs-6 text-decoration-none"><i
+							class="bi bi-box-arrow-in-left me-2"
+						></i>VOLVER AL INICIO</a>
+
+				{{else if isLogin}}
+					<div class="d-flex justify-content-center align-items-center mt-5 p-3">
+						<img src="/images/error.png" class="me-3" alt="error" width="50px" />
+						<h4 class="text-white mt-1" style="text-transform: uppercase;">{{isLogin}}</h4>
+					</div>
+
+					<a href="/" class="btn btn-outline-light btn-sm fs-6 text-decoration-none"><i
+							class="bi bi-box-arrow-in-left me-2"
+						></i>VOLVER AL INICIO</a>
+				{{else if isAdmin}}
+					<div class="d-flex justify-content-center align-items-center mt-5 p-3">
+						<img src="/images/error.png" class="me-3" alt="error" width="50px" />
+						<h4 class="text-white mt-1" style="text-transform: uppercase;">{{isAdmin}}</h4>
+					</div>
+
+					<a href="/home" class="btn btn-outline-light btn-sm fs-6 text-decoration-none"><i
+							class="bi bi-box-arrow-in-left me-2"
+						></i>VOLVER AL INICIO</a>
+
+				{{else if isUser}}
+					<div class="d-flex justify-content-center align-items-center mt-5 p-3">
+						<img src="/images/error.png" class="me-3" alt="error" width="50px" />
+						<h4 class="text-white mt-1" style="text-transform: uppercase;">{{isUser}}</h4>
+					</div>
+
+					<a href="/home" class="btn btn-outline-light btn-sm fs-6 text-decoration-none"><i
+							class="bi bi-box-arrow-in-left me-2"
+						></i>VOLVER AL INICIO</a>
+				{{else if notCart}}
+					<div class="d-flex justify-content-center align-items-center mt-5 p-3">
+						<img src="/images/error.png" class="me-3" alt="error" width="50px" />
+						<h4 class="text-white mt-1" style="text-transform: uppercase;">{{notCart}}</h4>
+					</div>
+
+					<a href="/home" class="btn btn-outline-light btn-sm fs-6 text-decoration-none"><i
+							class="bi bi-box-arrow-in-left me-2"
+						></i>VOLVER AL INICIO</a>
+				{{else if errorId}}
+					<div class="d-flex justify-content-center align-items-center mt-5 p-3">
+						<img src="/images/error.png" class="me-3" alt="error" width="50px" />
+						<h4 class="text-white mt-1" style="text-transform: uppercase;">{{errorId}}</h4>
+					</div>
+
+					<a href="/home" class="btn btn-outline-light btn-sm fs-6 text-decoration-none"><i
+							class="bi bi-box-arrow-in-left me-2"
+						></i>VOLVER AL INICIO</a>
+				{{else if notFound}}
+					<div class="d-flex justify-content-center align-items-center mt-5 p-3">
+						<img src="/images/error.png" class="me-3" alt="error" width="50px" />
+						<h4 class="text-white mt-1" style="text-transform: uppercase;">{{notFound}}</h4>
+					</div>
+
+					<a href="/" class="btn btn-outline-light btn-sm fs-6 text-decoration-none"><i
+							class="bi bi-box-arrow-in-left me-2"
+						></i>VOLVER AL INICIO</a>
+				{{else}}
+					<div class="d-flex justify-content-center align-items-center mt-5 p-3">
+						<img src="/images/error.png" class="me-3" alt="error" width="50px" />
+						<h4 class="text-white mt-1" style="text-transform: uppercase;">ERROR DE AUTENTICACION</h4>
+
+					</div>
+
+					<a href="/" class="btn btn-outline-light btn-sm fs-6 text-decoration-none"><i
+							class="bi bi-box-arrow-in-left me-2"
+						></i>VOLVER AL INICIO</a>
+				{{/if}}
+
+			</div>
+		</div>
+	</div>
+</div>
